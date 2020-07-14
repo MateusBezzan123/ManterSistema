@@ -14,27 +14,21 @@
 	<name>squadra</name>
 	<description>Demo project for Spring Boot</description>
 
+
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-	     <dependency>
-            <groupId>org.hibernate</groupId>
-             <artifactId>hibernate-core</artifactId>
-             <version>5.0.7.Final</version>
-             <scope>compile</scope>
-           </dependency>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>1.3.6.RELEASE</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>1.3.6.RELEASE</version>
 		</dependency>
 		
 		<dependency>
@@ -49,29 +43,23 @@
 		</dependency>
 		
 		<dependency>
+          <groupId>net.minidev</groupId>
+          <artifactId>accessors-smart</artifactId>
+          <version>1.2</version>
+        </dependency>
+        
+      <dependency>
+          <groupId>net.minidev</groupId>
+          <artifactId>json-smart</artifactId>
+          <version>2.3</version>
+       </dependency>
+		
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-           <groupId>org.springframework.boot</groupId>
-           <artifactId>spring-boot-starter-validation</artifactId>
-         </dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

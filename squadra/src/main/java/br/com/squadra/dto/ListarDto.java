@@ -13,7 +13,8 @@ public class ListarDto {
 	private String sigla;
 	private String email;
 	private String url;
-	 private Status status;
+	private Status status;
+	
 	public ListarDto(Sistema sistema) {
 		this.id = sistema.getId();
 		this.descricao = sistema.getDescricao();
