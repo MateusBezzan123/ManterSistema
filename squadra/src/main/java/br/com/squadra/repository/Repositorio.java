@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.squadra.modelo.Sistema;
 
-public interface Repositorio extends JpaRepository<Sistema, Integer> {
+public interface Repositorio extends JpaRepository<Sistema, Long> {
 
 	List<Sistema> findByDescricao(String descricao);
 }

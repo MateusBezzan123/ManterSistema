@@ -22,21 +22,46 @@ public class SistemaForm {
     @Size(max=50)
 	private String url;
 
+	
 	public String getDescricao() {
 		return descricao;
 	}
+
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 
 	public String getSigla() {
 		return sigla;
 	}
 
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+
+
 	public String getEmail() {
 		return email;
 	}
 
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
 	public String getUrl() {
 		return url;
 	}
+
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 
 	public Sistema converter(Repositorio repositorio) {
 		return new Sistema(descricao, sigla, email, url);
