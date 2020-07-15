@@ -8,11 +8,10 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -23,15 +22,15 @@ import br.com.squadra.repository.Repositorio;
 
 
 @RestController
-@RequestMapping("/sistema")
+@RequestMapping(value = "/sistema")
 public class SistemaController {
 
 	@Autowired
 	private Repositorio repositorio;
 	
 
-	@CrossOrigin
-    @GetMapping
+	
+	@RequestMapping(method=RequestMethod.GET)
     public List<ListarDto> listarSistema() {
         List<Sistema> sistemas = repositorio.findAll();
         return ListarDto.converter(sistemas);
