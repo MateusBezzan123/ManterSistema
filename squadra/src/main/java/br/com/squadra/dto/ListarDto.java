@@ -24,8 +24,8 @@ public class ListarDto {
 		this.status = sistema.getStatus();
 	}
 
-	public static List <ListarDto> converter(List<Sistema> sistema) {
-		return sistema.stream().map(ListarDto::new).collect(Collectors.toList());
+	public static List<ListarDto> converter(List<Sistema> sistemas) {
+		return sistemas.stream().map(ListarDto::new).collect(Collectors.toList());
 	}
 	
 	public int getId() {
