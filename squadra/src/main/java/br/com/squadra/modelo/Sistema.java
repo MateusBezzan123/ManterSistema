@@ -1,6 +1,7 @@
-package br.com.squadra.modelo;
+package br.com.squadra.Modelo;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,99 +10,103 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
 @Entity
 public class Sistema implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-    
-	private String descricao;
-	private String sigla;
-	private String email;
-	private String url;
-	
-	@Enumerated(EnumType.STRING)
+    private String descricao;
+
+    private String sigla;
+
+    private String email;
+
+    private String url;
+
+    @Enumerated(EnumType.STRING)
     private Status status = Status.Ativado;
-	
-	
-	
-	public Sistema(String descricao, String sigla, String email, String url) {
-		this.descricao = descricao;
-		this.email = email;
-		this.sigla = sigla;
-		this.url = url;
-	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		return result;
-	}
+    private LocalDateTime dataModificacao;
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Sistema other = (Sistema) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
+    private String justificativa;
 
-	public Status getStatus() {
-		return status;
-	}
 
-	public void setStatus(Status status) {
-		this.status = status;
-	}
+    public Sistema() { }
 
-	public int getId() {
-		return id;
-	}
+    public Sistema(String descricao, String sigla, String email, String url) {
+        this.descricao = descricao;
+        this.sigla = sigla;
+        this.email = email;
+        this.url = url;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getId() {
+        return this.id;
+    }
 
-	public String getDescricao() {
-		return descricao;
-	}
-	
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	
-	public String getSigla() {
-		return sigla;
-	}
-	
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public String getUrl() {
-		return url;
-	}
-	
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getSigla() {
+        return this.sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Status getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getData() {
+        return this.dataModificacao;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.dataModificacao = data;
+    }
+
+    public String getJustificativa() {
+        return this.justificativa;
+    }
+
+    public void setJustificativa(String justificativa) {
+        this.justificativa = justificativa;
+    }
 }

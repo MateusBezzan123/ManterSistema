@@ -1,4 +1,4 @@
-package br.com.squadra.modelo;
+package br.com.squadra.Modelo;
 
 public enum Status {
 	Ativado,

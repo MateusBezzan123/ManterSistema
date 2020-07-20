@@ -1,4 +1,4 @@
-package br.com.squadra.confing.validacao;
+package br.com.squadra.Confing.validacao;
 
 import java.util.ArrayList;
 import java.util.List;

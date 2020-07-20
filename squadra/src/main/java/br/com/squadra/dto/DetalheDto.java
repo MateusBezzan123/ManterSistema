@@ -1,16 +1,13 @@
 package br.com.squadra.Dto;
 
-
-import java.util.List;
-import java.util.stream.Collectors;
+import java.time.LocalDateTime;
 
 import br.com.squadra.Modelo.Sistema;
 import br.com.squadra.Modelo.Status;
 
 
 
-public class ListarDto {
-
+public class DetalheDto {
 	 private int id;
 
 	    private String descricao;
@@ -23,20 +20,20 @@ public class ListarDto {
 
 	    private Status status;
 
+	    private LocalDateTime dataAtualizacao;
 
-	    public ListarDto(Sistema sistema) {
+	    private String justificativa;
+
+	    public DetalheDto(Sistema sistema) {
 	        this.id = sistema.getId();
 	        this.descricao = sistema.getDescricao();
 	        this.sigla = sistema.getSigla();
 	        this.email = sistema.getEmail();
 	        this.url = sistema.getUrl();
 	        this.status = sistema.getStatus();
+	        this.dataAtualizacao = sistema.getData();
+	        this.justificativa = sistema.getJustificativa();
 	    }
-
-	    public static List<ListarDto> converter(List<Sistema> sistemas){
-	        return sistemas.stream().map(ListarDto::new).collect(Collectors.toList());
-	    }
-		
 
 	    public int getId() {
 	        return this.id;
@@ -61,9 +58,12 @@ public class ListarDto {
 	    public Status getStatus() {
 	        return this.status;
 	    }
-	    
 
-	    
+	    public LocalDateTime getDataAtualizacao() {
+	        return this.dataAtualizacao;
+	    }
 
-	
+	    public String getJustificativa() {
+	        return this.justificativa;
+	    }
 }
