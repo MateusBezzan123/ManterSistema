@@ -24,10 +24,6 @@ import br.com.squadra.Dto.ListarDto;
 import br.com.squadra.Modelo.Sistema;
 import br.com.squadra.Repository.Repositorio;
 
-
-
-
-
 @RestController
 @RequestMapping("/sistema")
 public class SistemaApi {
